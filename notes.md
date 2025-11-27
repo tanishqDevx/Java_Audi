@@ -768,3 +768,37 @@ try {
 ### exceptional debugging questions
 
 See [this](./debugging%20exercises/) folder.
+
+
+### thread
+```java
+class MyThread extends Thread {
+    private String threadName;
+
+    public MyThread(String name) {
+        this.threadName = name;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(threadName + " running → " + i);
+            try { Thread.sleep(500); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread("Thread A");
+        MyThread t2 = new MyThread("Thread B");
+
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+if i want to change the hardware resource of the a thread i can just run **thread.sleep(0)**
+to run the process in a defined manner we can use **ti.join()** it will stop the whole main method
+
