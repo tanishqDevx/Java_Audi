@@ -28,7 +28,7 @@ class account{
 
 2 types of constructors :
 
-- Default Constructorsd
+- Default Constructor
 
 ```java
 public class BankAccount {
